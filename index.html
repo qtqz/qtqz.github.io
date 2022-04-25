@@ -1,17 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <title>Document</title>
     <style>
-    body{
-    text-align:center;
-    padding-top:100px;
-    }
+        body {
+            background-color: blanchedalmond;
+        }
+
+        .main {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .wt {
+            width: 1000px;
+            position: relative;
+            top: -18px;
+        }
+
+        .ot {
+            height: 150px;
+            width: 700px;
+            margin: 0 auto;
+            perspective: 500px;
+            perspective-origin: 50% -100%;
+            position: relative;
+            top: -250px;
+        }
+
+        .table {
+            /*border: 1px yellow solid;*/
+            height: 150px;
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: 72px;
+            transform: rotateX(50deg);
+            margin: 0 auto;
+            text-shadow: 2px 2px 30px #000000;
+
+        }
+
+        .row {
+            /*border: 1px slateblue solid;*/
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .row a {
+            margin: 0 70px;
+        }
+
+        .fa-qq {
+            color: steelblue;
+            margin-top: 35px;
+        }
+
+        .fa-telegram {
+            color: skyblue;
+            margin-top: 35px;
+            margin-right: 20px;
+        }
+
+        .fa-donate {
+            color: rgb(243, 196, 76);
+        }
     </style>
 </head>
+
 <body>
-<img src='27.png'>
+    <div class="main">
+        <img src='img/27.png'>
+        <br>
+        <img class="wt" src='img/wt.png'>
+    </div>
+    <div class="ot">
+        <div class="table">
+            <div class="row">
+                <a href="https://github.com/qtqz" target="_blank"><i class="fab fa-github" title="我的GitHub"></i></a>
+                <a href="javascript:;"><i class="fab fa-qq" title="我的QQ"></i></a>
+            </div>
+            <div class="row">
+                <a href="javascript:;" title="我的B站"><img style="height: 72px;" src="img/bili.png" alt=""></a>
+                <a href="javascript:;"><i class="fab fa-telegram" title="我的Telegram"></i></a>
+                <a href="http://www.pkuit.com/data/attachment/album/202204/22/164747d7974y2d2m4lhk5b.png"
+                    target="_blank"><i class="fas fa-donate" title="给我打钱"></i></a>
+            </div>
+        </div>
+    </div>
+    <!--
+-->
 </body>
