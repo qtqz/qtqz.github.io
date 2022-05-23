@@ -2,21 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="这里是轻稚天雪的主页哦w">
+    <meta name="keywords" content="轻稚,天雪,轻稚天雪,主页,个人网站,博客,blog,qztx,qtqz">
+    <meta name="author" content="轻稚天雪">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
     <title>🐾轻稚天雪的主页❄</title>
+    <script>
+            function s() {
+                alert(navigator.userAgent + '\nCookie= ' + navigator.cookieEnabled + '\nclientWidth= ' + document.documentElement.clientWidth + '' + '\nclientHeight= ' + document.documentElement.clientHeight + '\nscreenwidth= ' + window.screen.width + '\nscreenheight= ' + window.screen.height + '\ndevicePixelRatio= ' + window.devicePixelRatio);
+            }
+    </script>
     <style>
         body {
             background-color: blanchedalmond;
-            min-width: 1000px;
+            max-width: 100vw;
+            margin: 0 auto;
         }
 
+        /*
+
+            display: flex;
+    max-width: 100vw;
+*/
+
         .main {
+            margin: 0 auto;
             position: relative;
             margin-top: 100px;
+            width: 1000px;
             /*text-align: center;
             display: flex;
             flex-direction: column;*/
@@ -33,9 +49,10 @@
             top: -18px;
         }
 
-        .ot {
+        .virtualTable {
+            margin: 0 auto;
             height: 150px;
-            width: 700px;
+            width: 1000px;
             margin: 0 auto;
             perspective: 500px;
             perspective-origin: 50% -100%;
@@ -135,10 +152,10 @@
     <div class="main">
         <img src='img/27.png'>
         <img class="wt" src='img/wt.png'>
-        <img class="say" src='img/say.png'>
+        <img class="say" src='img/say.png' onclick="s()">
     </div>
     <div style="height: 0px;">
-        <div class="ot">
+        <div class="virtualTable">
             <div class="table">
                 <div class="row">
                     <a href="https://github.com/qtqz" target="_blank"><i class="fab fa-github" title="我的GitHub"></i></a>
