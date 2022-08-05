@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
     <title>🐾轻稚天雪的主页❄</title>
-    <script>
-            function s() {
-                alert(navigator.userAgent + '\nCookie= ' + navigator.cookieEnabled + '\nclientWidth= ' + document.documentElement.clientWidth + '' + '\nclientHeight= ' + document.documentElement.clientHeight + '\nscreenwidth= ' + window.screen.width + '\nscreenheight= ' + window.screen.height + '\ndevicePixelRatio= ' + window.devicePixelRatio);
-            }
-    </script>
     <style>
         body {
             background-color: blanchedalmond;
@@ -85,6 +80,16 @@
             margin: 0 50px;
         }
 
+        .row a:hover {
+            text-shadow: 2px 2px 30px rgba(255, 219, 102, 0.5);
+        }
+
+        .row a img:hover {
+            box-shadow: 2px 2px 30px rgb(255 219 102 / 50%);
+            background-color: rgba(255, 219, 102, 0.5);
+            border-radius: 13px;
+        }
+
         .fa-github {
             color: indigo;
             margin-top: 25px;
@@ -102,7 +107,7 @@
         }
 
         .fa-donate {
-            color: rgb(243, 196, 76);
+            color: rgb(255, 203, 72);
         }
 
         .fa-envelope {
@@ -124,31 +129,41 @@
             top: 60px;
             opacity: 0.95;
         }
+
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            opacity: 0;
+            transition: opacity .4s linear;
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #4da0ff;
+            box-shadow: 0 0 10px rgba(119, 182, 255, .7);
+        }
+
+        .loading-bar.loading {
+            opacity: 1;
+            transition: none;
+        }
+
+        .loading-bar.loading .progress {
+            transition: width .4s ease;
+        }
     </style>
-    <script>
-        window.onload = () => document.querySelector('.say').classList.add("say2");
-        setTimeout(function () {
-            //百度统计
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?e3f80eebb7039766ba117caa9000c0c2";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        }, 5000);
-        /*
-        console.log($(document.querySelector('link')).html());
-        $(".say").addClass("say2");
-        
-        setTimeout(function () {
-            document.querySelector('.say').classList.add("say2");
-        }, 1800);
-*/
-    </script>
 </head>
 
 <body>
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
     <div class="main">
         <img src='img/27.png'>
         <img class="wt" src='img/wt.png'>
@@ -172,6 +187,72 @@
             </div>
         </div>
     </div>
+    <script>
+        setTimeout(function () {
+            //百度统计，加载失败不影响其他内容
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?e3f80eebb7039766ba117caa9000c0c2";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        }, 3000);
+        function s() {
+            alert(navigator.userAgent + '\nCookie= ' + navigator.cookieEnabled + '\nclientWidth= ' + document.documentElement.clientWidth + '' + '\nclientHeight= ' + document.documentElement.clientHeight + '\nscreenwidth= ' + window.screen.width + '\nscreenheight= ' + window.screen.height + '\ndevicePixelRatio= ' + window.devicePixelRatio);
+        }
+
+        //by https://liuyib.github.io/2019/09/24/use-pjax-to-your-site/#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8
+        var loadingBar = parent.document.querySelector(".loading-bar");
+        var progress = parent.document.querySelector(".loading-bar .progress");
+        var MID_LOADING_WIDTH = 58;
+        // 进度条的最大增加宽度
+        var MAX_LOADING_WIDTH = 95;
+        var timer = null;
+        //加载进度条
+        //console.log('开始时执行的函数');
+        // 进度条默认已经加载 20%
+        var loadingBarWidth = 20;
+        // 显示进度条
+        loadingBar.classList.add("loading");
+        // 初始化进度条的宽度
+        progress.style.width = loadingBarWidth + "%";
+
+        clearInterval(timer);
+        timer = setInterval(function () {
+            // 进度条的增加速度（可以改为一个随机值，显得更加真实）
+            // 先快后慢
+            if (loadingBarWidth < MID_LOADING_WIDTH) {
+                loadingBarWidth += 5;
+            } else {
+                loadingBarWidth += 2.5;
+            }
+            // 当进度条到达 95% 后停止增加
+            if (loadingBarWidth > MAX_LOADING_WIDTH) {
+                loadingBarWidth = MAX_LOADING_WIDTH;
+            }
+            progress.style.width = loadingBarWidth + "%";
+        }, 900);
+        window.onload = () => {
+            document.querySelector('.say').classList.add("say2");
+            //console.log('完成之后执行的函数');
+            clearInterval(timer);
+            progress.style.width = "100%";
+            loadingBar.classList.remove("loading");
+            setTimeout(function () {
+                progress.style.width = 0;
+            }, 400);
+        }
+
+        /*
+        console.log($(document.querySelector('link')).html());
+        $(".say").addClass("say2");
+        
+        setTimeout(function () {
+            document.querySelector('.say').classList.add("say2");
+        }, 1800);
+*/
+    </script>
     <!--
 -->
 </body>
