@@ -9,6 +9,7 @@
     <meta name="author" content="轻稚天雪">
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">-->
     <link rel="stylesheet" href="./css/all.min.css">
+    <!--fa6-->
     <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
     <title>🐾轻稚天雪的主页❄</title>
     <style>
@@ -85,10 +86,21 @@
             text-shadow: 2px 2px 30px rgba(255, 219, 102, 0.5);
         }
 
+        .row svg {
+            color: rgb(0, 132, 222);
+            width: 90px;
+            vertical-align: middle;
+            fill: currentColor;
+            overflow: hidden;
+            filter: drop-shadow(2px 2px 18px rgba(0, 0, 0, 0.9));
+        }
+
+        .row svg:hover,
         .row a img:hover {
-            box-shadow: 2px 2px 30px rgb(255 219 102 / 50%);
-            background-color: rgba(255, 219, 102, 0.5);
-            border-radius: 13px;
+            box-shadow: 1px 1px 50px rgb(255 219 102);
+            background-color: rgba(255, 219, 102, 0.4);
+            border-radius: 24px;
+            filter: none;
         }
 
         .fa-github {
@@ -114,6 +126,14 @@
         .fa-envelope {
             margin-top: 25px;
             color: pink;
+        }
+
+        .fa-bilibili {
+            color: rgb(255, 142, 179);
+        }
+
+        .fa-zhihu {
+            color: rgb(5, 109, 232);
         }
 
         .say {
@@ -178,10 +198,19 @@
                 <div class="row">
                     <a href="https://github.com/qtqz" target="_blank"><i class="fab fa-github" title="我的GitHub"></i></a>
                     <a href="javascript:alert('保密哦w');"><i class="fab fa-qq" title="我的QQ"></i></a>
+                    <a href="https://www.zhihu.com/people/qi-feng-li-zhi" title="我的知乎" target="_blank">
+                        <svg viewBox="0 0 25 25">
+                            <path
+                                d="m12.344 17.963l-1.688 1.074l-2.131-3.35c-.44 1.402-1.172 2.665-2.139 3.825c-.402.483-.82.918-1.301 1.375c-.155.147-.775.717-.878.82l-1.414-1.414c.139-.139.787-.735.915-.856c.43-.408.795-.79 1.142-1.206c1.266-1.518 2.03-3.21 2.137-5.231H3v-2h4V7h-.868c-.689 1.266-1.558 2.222-2.618 2.857L2.486 8.143c1.395-.838 2.425-2.604 5.038-5.36l1.952.434c-.14.633-.303 1.227-.489 1.783H11.5v2H9v4h2.5v2H9.185l3.159 4.963zm3.838-.07L17.298 17H19V7h-4v10h.736l.446.893zM13 5h8v14h-3l-2.5 2l-1-2H13V5z">
+                            </path>
+                        </svg>
+                        <!--<i class="fa-brands fa-zhihu"
+                           ></i>-->
+                    </a>
                 </div>
                 <div class="row">
-                    <a href="javascript:alert('保密哦w');" title="我的B站"><img style="height: 72px;" src="img/bili.png"
-                            alt=""></a>
+                    <a href="javascript:alert('保密哦w');" title="我的B站"><i class="fa-brands fa-bilibili"
+                            title="我的B站"></i></a>
                     <a href="javascript:alert('qtqz9');"><i class="fab fa-telegram" title="我的Telegram"></i></a>
                     <a href="javascript:alert('qzqz7@qq.com');"><i class="fas fa-envelope" title="我的电子邮箱"></i></a>
                     <a href="http://www.pkuit.com/data/attachment/album/202204/22/164747d7974y2d2m4lhk5b.png"
